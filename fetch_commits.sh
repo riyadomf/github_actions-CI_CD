@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 REPO="riyadomf/java-utility-functions"
 URL="https://api.github.com/repos/$REPO/commits"

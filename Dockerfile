@@ -1,7 +1,11 @@
 FROM alpine:latest
 
-COPY fetch_commits.sh /fetch_commits.sh
+RUN apk add --no-cache curl jq
 
-RUN chmod +x /fetch_commits.sh
+WORKDIR /app
 
-ENTRYPOINT [ "/fetch_commits.sh" ]
+COPY fetch_commits.sh .
+
+RUN chmod +x fetch_commits.sh
+
+ENTRYPOINT ["./fetch_commits.sh" ]
